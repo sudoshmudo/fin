@@ -7,8 +7,8 @@ services:
     ports:
       - 8000:80
     depends_on:
-      - fin-api
-      - fin-web
+      - api
+      - web
       
   postgres:
     image: postgres:12
@@ -21,7 +21,7 @@ services:
     volumes:
       - db-data:/var/lib/postgresql/data:cached
       
-  fin-api:
+  api:
     image: sudoshmudo/fin-api:latest
     command: python app/main.py
     tty: true
@@ -31,7 +31,7 @@ services:
     depends_on:
       - postgres
   
-  fin-web:
+  web:
     image: sudoshmudo/fin-web:latest
     restart: always
     
