@@ -1,1 +1,7 @@
 .env
+swag/*
+!swag/nginx/
+swag/nginx/*
+!swag/nginx/proxy-confs
+swag/nginx/proxy-confs/*
+!swag/nginx/proxy-confs/fin.subdomain.conf
