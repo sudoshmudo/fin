@@ -37,7 +37,6 @@ services:
   api:
     image: sudoshmudo/fin-api:latest
     command: python app/main.py
-    tty: true
     environment:
       PYTHONPATH: .
       DATABASE_URL: "postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DATABASE}"
