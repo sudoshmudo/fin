@@ -21,7 +21,7 @@ services:
     depends_on:
       - api
       - web
-    restart: unless-stopped
+    restart: always
 
   postgres:
     image: postgres:12
@@ -37,6 +37,7 @@ services:
   api:
     image: sudoshmudo/fin-api:latest
     command: python app/main.py
+    restart: always
     environment:
       PYTHONPATH: .
       DATABASE_URL: "postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DATABASE}"
