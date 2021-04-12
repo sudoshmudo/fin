@@ -36,7 +36,6 @@ services:
       
   api:
     image: sudoshmudo/fin-api:latest
-    command: python app/main.py
     restart: always
     environment:
       PYTHONPATH: .
